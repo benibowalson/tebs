@@ -1,0 +1,186 @@
+
+body {
+   background-image: url(../../images/strip-bg-04.jpg);
+}
+
+@font-face {
+    font-family: BennyCustomFont;
+    src: url(../fonts/Song_Myung/SongMyung-Regular.ttf);
+}
+
+@font-face {
+    font-family: BennyJosefinSans;
+    src: url(../fonts/JosefinSans/JosefinSans-Regular.ttf);
+}
+
+.buttonHolderDiv {
+    margin: 2%; text-align: center;
+}
+
+.commentReplyButton {
+    margin-top: 3%;
+}
+
+#dvDepot {
+    border: solid 1px green; padding: 0.5%; background: #d2dddf; text-align: justify;
+    font-family: Manuale, serif, BennyJosefinSans, Helvetica, sans-serif; font-size: 1.2em;
+}
+
+#dvTopics {
+    border: solid 1px green; padding: .5% 1%; background: #829356;
+    font-family: Helvetica, sans-serif; font-size: 0.9em;
+}
+
+#dvTopics a {
+    background-color: #1287a8;  color: white; width: 100%;
+}
+
+#dvTopics a:hover { 
+    background-color: #c2571a;
+}
+
+#dvMediaList a {
+    background-color: #a18986;  color: white; width: 100%;
+}
+
+#dvMediaList a:hover {
+    background-color: #133944;
+}
+
+
+#dvComments, #dvCommentButton {
+    padding-top: 1%; padding-left: 2%;
+}
+
+.comment {
+    border: solid 1px #829356; border-radius: 3px; padding: 0 2% 3% 2%;
+}
+
+.motherComment{
+    background-color: #A9A9A9;
+}
+
+.replyComment {
+    margin-left: 5%; background-color: #D3D3D3;
+}
+
+.boldUserName {
+    font-style: italic; font-weight: bold;
+}
+
+#btnComment, #btnCancelNewReaction {
+    margin-left: 1%;
+}
+
+.navbar {
+  background-color: #3c6478;
+  border: none;
+}
+
+.navbar-brand {
+   position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+    font-size: 2em;
+}
+
+.navbar * {
+  color: #fff !important;
+}
+
+
+.navbar-right{
+    padding-right: 5%;
+}
+
+.navbar-left{
+    padding-left: 5%;
+}
+
+.section-of-div {
+    background: #3c6478; padding: 1%; margin: 1%; /*#829356, *#3c6478*/
+}
+
+#dvMedia {
+    width: 50%; float: right; margin-left: 1%;
+}
+
+#mediaPlayer {
+    width: 100%; height: 100%;
+}
+
+#dvMediaList {
+    border: #829356 solid 3px;
+}
+
+div[id*=Report]{
+    margin: auto; text-align: center; color: rgb(211, 19, 19);
+}
+
+/*
+#dvReportMediaFile, #dvReportSignUp, #dvReportLogin {
+    margin: auto; text-align: center; color: red;
+}
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    margin: auto; text-align: center;
+}
+
+.input-group-addon {
+    min-width: 145px;
+}
+
+form {
+	text-align: center;
+}
+
+.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;  
+}
+
+.modal-header{
+    background-color: #3c6478; color: white;
+}
+
+.modal-body{
+	background-color: #508ba8; color: white;
+}
+
+.modal-footer{
+	background-color: #3c6478;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;    /*row heights*/
+  grid-gap: 2%;
+  /*background-color: #2196F3;*/
+  padding: 2%;
+}
+
+.grid-container>div {
+  /*background-color: rgba(255, 255, 255, 0.8);*/
+  text-align: center;
+  padding:2% 0;
+  /*font-size: 30px;*/
+}
+

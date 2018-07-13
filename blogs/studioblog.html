@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TEBS STUDIO BLOG</title>
+
+		<link rel="stylesheet" href="../css/libraries/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/libraries/bootstrap/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Bilbo|Manuale" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../css/code/blogs.css">
+
+		<script type="text/javascript" src="../scripts/js/libraries/jquery/jquery-3.3.1.min.js"></script>	<!--jquery b4 jquery-ui -->
+        <script type="text/javascript" src="../scripts/js/libraries/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../scripts/js/libraries/moment/moment.js"></script>
+		<script type="text/javascript" src="../scripts/js/code/studioblog.js"></script>
+    </head>
+
+    <body>
+        <div class="navbar navbar-default">
+
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="#"><span id="spnFeedback">Logged Out !</span></a>
+                </li>
+            </ul>
+
+            <span id="spnNavbarTopic" class="navbar-brand">TEBS</span>
+
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" id="ancSignUp"><span id="glyphSignUp" class="glyphicon glyphicon-user"></span><span id="spnSignUp">  Sign Up</span></a>
+                </li>
+                <li>
+                    <a href="#" id="ancLogin"><span id="glyphLogin" class="glyphicon glyphicon-log-in"></span><span id="spnUserLogin">  Log In Here</span></a>
+                </li>
+            </ul>
+            
+        </div> <!-- End of Navbar -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12" id="dvTopics">
+                    <h4>POSTS</h4>
+                </div>
+            
+                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-xs-12" id="dvPost">
+                    <div class="row">
+                        <div id="dvMedia">
+                            <div id="dvMediaPlayer">
+                                <video id="mediaPlayer" controls>
+                                    <source id="src1"> Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            
+
+                            <div id="dvMediaList" class="grid-container">
+                                <!--<h4>Media List</h4>-->
+                            </div>
+
+                        </div>
+
+                        <div id="dvDepot">
+                             This will hold posts
+                        </div>
+                    </div>            
+                    
+                </div>
+            </div>
+
+            <div class="row" id="dvCommentsHolder">
+                <div class="row" id="dvComments">
+
+                </div>
+
+                <div class="row" id="dvCommentButton">
+                    <!--
+                        <button class="btn btn-info btn-xs" id="btnComment">Comment</button>
+                        <span id="spnLoginInstruction"> Login to Comment</span>
+                     -->
+                </div>
+            </div>
+            
+        </div> <!-- container end -->
+     
+        <div id="mdlLogin" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- multiplication symbol -->
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 id="h4Login" class="modal-title">Authenticate</h4>
+                    </div>
+        
+                    <div class="modal-body">
+                        <!-- form will go here -->
+                        <form id="loginModalForm">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="spnUserName">Username</span>
+                                <input type="text" id="txtUsername" class="form-control" maxlength="50" placeholder="Username Here">
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-addon" id="spnPassword">Password</span>
+                                <input type="password" id="txtPassword" class="form-control" maxlength="50" placeholder="Password Here">
+                            </div>
+
+                            <div id="dvReportLogin" class="input-group">
+                            
+                            </div>
+                        </form>
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btnLogin">Login In</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>        <!-- Login Modal -->
+
+        <div id="mdlNewPost" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- multiplication symbol -->
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 id="h4NewPost" class="modal-title">New Post</h4>
+                    </div>
+        
+                    <div class="modal-body">
+                        <!-- form will go here -->
+                        <form id="newPostModalForm">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="spnNewPostTitle">Title</span>
+                                <input type="text" id="txtNewPostTitle" class="form-control" maxlength="100" placeholder="Title Here">
+                            </div>
+
+                            <h4>Post</h4>
+
+                            <textarea id="txtNewPost" class="form-control" placeholder="Post Here" maxlength="65000"></textarea>
+
+                            <div id="dvReportPost" class="input-group">
+                            
+                            </div>
+                        </form>
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btnSavePost">Save Post</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel Post</button>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- New Post Modal -->
+
+        <div id="mdlNewMedia" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- multiplication symbol -->
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 id="h4NewMedia" class="modal-title">New Multimedia</h4>
+                    </div>
+        
+                    <div class="modal-body">
+                        <!-- form will go here -->
+                        <form id="newMediaModalForm">
+                            <h4>Media file (.mp4, .mp3 or .ogg | 20MB)</h4>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="spnNewMediaTitle">File</span>
+                                <input type="file" id="flNewMedia" class="form-control">
+                            </div>
+
+                            <h4>Album Art (.jpg, .jpeg or .png | 500kB)</h4>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="spnNewPhotoTitle">Photo File</span>
+                                <input type="file" id="flNewPhoto" class="form-control">
+                            </div>
+
+                            <div id="dvReportMediaFile" class="input-group">
+
+                            </div>
+                        </form>
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btnUploadMedia">Upload File</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel Upload</button>
+                    </div>
+                </div>
+            </div>
+        </div>  <!-- New Media Modal -->
+
+        <div id="mdlSignUp" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- multiplication symbol -->
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 id="h4SignUp" class="modal-title">Register</h4>
+                    </div>
+        
+                    <div class="modal-body">
+                        <!-- form will go here -->
+                        <form id="SignUpModalForm">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="spnSignUpUserName">Username</span>
+                                <input type="text" id="txtSignUpUsername" class="form-control" maxlength="50" placeholder="Username Here">
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-addon" id="spnSignUpEmail">Email</span>
+                                <input type="text" id="txtSignUpEmail" class="form-control" maxlength="50" placeholder="Email Here">
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-addon" id="spnSignUpPassword">Password</span>
+                                <input type="password" id="txtSignUpPassword" class="form-control" maxlength="50" placeholder="Password Here">
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-addon" id="spnCSignUpPassword">Confirm Password</span>
+                                <input type="password" id="txtCSignUpPassword" class="form-control" maxlength="50" placeholder="Confirm Password Here">
+                            </div>
+
+                            <div id="dvReportSignUp" class="input-group">
+
+                            </div>
+                        </form>
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btnSignUp">Register</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel Upload</button>
+                    </div>
+                </div>
+            </div>
+        </div>  <!-- Sign Up Modal -->
+
+        <div id="mdlMediaConsult" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- multiplication symbol -->
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 id="h4MediaConsult" class="modal-title">CONSULTATION (MEDIA)</h4>
+                    </div>
+        
+                    <div class="modal-body">
+                        <!-- form will go here -->
+                        <form id="frmMediaConsult">
+                            <div class="section-of-div">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="spnMediaConsultFirstname">Firstname</span>
+                                    <input type="text" id="txtMediaConsultFirstname" class="form-control" maxlength="50" placeholder="Firstname Here">
+                                </div>
+                                
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="spnMediaConsultLastname">Lastname</span>
+                                    <input type="text" id="txtMediaConsultLastname" class="form-control" maxlength="50" placeholder="Lastname Here">
+                                </div>
+                                
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="spnMediaConsultGender">Gender</span>
+                                    <span class="form-control">
+                                        <label class="radio-inline"><input type="radio" id="radGenderMale" name="radGender" class="inline"> Male</label>
+                                        <label class="radio-inline"><input type="radio" id="radGenderFemale" name="radGender" class="inline"> Female</label>
+                                    </span>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="spnMediaConstultOrganization">Organization</span>
+                                    <input type="text" id="txtMediaConsultOrganization" class="form-control" maxlength="50" placeholder="Organization Here">
+                                </div>
+                                
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="spnMediaConstultAddress">Address</span>
+                                    <textarea id="txtMediaConsultAddress" class="form-control" maxlength="200" placeholder="Address Here"></textarea>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="spnMediaConstultCity">Address</span>
+                                    <input type="text" id="txtMediaConsultCity" class="form-control" maxlength="50" placeholder="City Here">
+                                </div>
+                                
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="spnMediaConstultPhone">Phone</span>
+                                    <input type="text" id="txtMediaConsultPhone" class="form-control" maxlength="50" placeholder="Phone Number Here">
+                                </div>
+                                
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="spnMediaConstultDate">Date</span>
+                                    <label id="lblMediaConsultDate" class="form-control"></label>
+                                </div>
+                            </div>
+
+                            <div class="section-of-div">
+                                <h4>RENTALS AND INSTALLATIONS</h4>
+
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="Rental" id="chkMediaConsultLiveSound">Gospel Inspired Live Sound</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="Rental" id="chkMediaConsultDJ">Gospel Inspired DJ</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="Rental" id="chkMediaConsultLight">Gospel Inspired Stage Light and Effect</label>
+                                </div>
+                            </div>
+
+                            <div class="section-of-div">
+                                <h4>BROADCAST</h4>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="Broadcast" id="chkMediaConsultLiveRadio">Gospel Inspired Radio</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="Broadcast" id="chkMediaConsultLiveTV">Gospel Inspired TV Show</label>
+                                </div>
+                            </div>
+
+                            <div class="section-of-div">
+                                <h4>DIGITAL PUBLISHING</h4>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="Publishing" id="chkMediaConsultGraphic">Graphic Design</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="Publishing" id="chkMediaConsultMotion">Motion Graphics</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="Publishing" id="chkMediaConsultMotion">Audio Resources</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="Publishing" id="chkMediaConsultMessages">Messages</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="Publishing" id="chkMediaConsultAudioBook">Audio Book</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="Publishing" id="chkMediaConsultComics">Comics</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="Publishing" id="chkMediaConsultAnimation">Animations 2D / 3D</label>
+                                </div>
+                            </div>
+
+                            <div class="section-of-div">
+                                <h4>DROP COMMENTS</h4>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="spnMediaConstultLiveComment">Comment</span>
+                                    <textarea id="txtMediaConsultComment" class="form-control" placeholder="Comment here"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="section-of-div">
+                                <h4>CONTACT US</h4>
+                                <div class="input-group">
+                                    <span class="input-group-addon">CALL US&nbsp;&nbsp;<span class="glyphicon glyphicon-earphone"></span></span>
+                                    <label class="form-control" >+2347038237845</label>
+                                </div>
+
+                                <div class="input-group">
+                                    <span class="input-group-addon">EMAIL US&nbsp;&nbsp;<span class="glyphicon glyphicon-envelope"></span></span>
+                                    <label class="form-control">tebsstudios@gmail.com</label>
+                                </div>
+                            </div>
+        
+                            <div id="dvReportMediaConsult" class="input-group">
+        
+                            </div>
+                        </form>
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btnMediaConsultNext">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Media Consult Modal -->
+
+		<footer class="row tm-footer">
+                    
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<h4>Copyright &copy; 2018 Benibo Walson,<a href="tel:+2348068781029">+2348068781029</a>, <a href="mailto:benibowalson@live.com">benibowalson@live.com</a></h4>				
+			</div>
+			
+		</footer>     
+        <!--<script src="jquery-2.1.1.min.js"></script> -->
+        <script src="../scripts/js/libraries/bootstrap/bootstrap.min.js"></script>
+    </body>
+</html>

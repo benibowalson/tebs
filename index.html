@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TEBS GROUP</title>
+
+
+		<link rel="stylesheet" href="css/libraries/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="css/libraries/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/code/tebsgroup.css">
+
+		<script type="text/javascript" src="scripts/js/libraries/jquery/jquery-2.1.1.min.js"></script>	<!--jquery b4 jquery-ui -->
+		<script type="text/javascript" src="scripts/js/libraries/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="scripts/js/code/tebsgroup.js"></script>
+    </head>
+    <body>
+        <div class="container">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">[Whatever]</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav nav-pills" id="myNav">
+							<li><!--class="active" --><a href="#myHome" data-toggle="tab" id="mnuHomeA">Home<span class="sr-only">(current)</span></a></li>
+
+							<!-- studios -->
+                            <li class="dropdown">
+								<a href="#" role="button" data-toggle="dropdown" id="mnuMedia">Studios<span class="caret"></span></a>
+								<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+									<li><a href="#myStudios" id="ancStudioConsult" data-toggle="tab">Consultation</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-submenu">
+										<a href="#" tabindex="-1">Production</a>
+										<ul class="dropdown-menu">
+											<li><a href="#myStudios" tabindex="-1" id="ancStudioMusic" data-toggle="tab">Gospel Inspired Music</a></li>	
+											<li class="divider"></li>
+											<li><a href="#myStudios" id="ancStudioVideo" data-toggle="tab">Gospel Inspired Music Video</a></li>
+											<li class="divider"></li>
+											<li><a href="#myStudios" id="ancStudioMovie" data-toggle="tab">Gospel Inspired Movie</a></li>
+										</ul>
+									</li>
+									<li class="divider"></li>
+									<li class="dropdown-submenu">
+										<a href="#" tabindex="-1">Training</a>
+										<ul class="dropdown-menu">
+											<li><a href="#myStudios" tabindex="-1" id="ancStudioVoice" data-toggle="tab">Voice Courses</a></li>	
+											<li class="divider"></li>
+											<li><a href="#myStudios" id="ancStudioInstrument" data-toggle="tab">Instrument Courses</a></li>
+										</ul>
+									</li>
+									<li class="divider"></li>
+									<li><a href="#" id="ancStudioBlog">Blog</a></li>
+								</ul>
+							</li> <!--Studios -->
+
+							<!-- Media -->
+                            <li class="dropdown">
+								<a href="#" role="button" data-toggle="dropdown" id="mnuMedia">Media<span class="caret"></span></a>
+								<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+									<li><a href="#myMedia" id="ancMediaConsult" data-toggle="tab">Consultation</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-submenu">
+										<a href="#" tabindex="-1">Rental</a>
+										<ul class="dropdown-menu">
+											<li><a href="#myMedia" tabindex="-1" id="ancMediaSound" data-toggle="tab">Live Sound</a></li>	
+											<li class="divider"></li>
+											<li><a href="#myMedia" id="ancMediaDJ" data-toggle="tab">Gospel Inspired DJ</a></li>
+											<li class="divider"></li>
+											<li><a href="#myMedia" id="ancMediaLight" data-toggle="tab">Stage Light</a></li>
+											<li class="divider"></li>
+											<li><a href="#myMedia" id="ancMediaEffects" data-toggle="tab">Light Effects</a></li>
+										</ul>
+									</li>
+
+									<li class="divider"></li>
+
+									<li class="dropdown-submenu">
+										<a href="#" tabindex="-1">Broadcast</a>
+										<ul class="dropdown-menu">
+											<li><a href="#myMedia" tabindex="-1" id="ancMediaRadio" data-toggle="tab">Gospel Inspired Radio</a></li>	
+											<li class="divider"></li>
+											<li><a href="#myMedia" id="ancMediaTV" data-toggle="tab">Gospel Inspired TV Show</a></li>
+										</ul>
+									</li>
+
+									<li class="divider"></li>
+
+									<li class="dropdown-submenu">
+										<a href="#" tabindex="-1">Audio Resources</a>
+										<ul class="dropdown-menu">
+											<li><a href="#myMedia" tabindex="-1" id="ancMediaGingles" data-toggle="tab">Gingles</a></li>	
+											<li class="divider"></li>
+											<li><a href="#myMedia" id="ancMediaMessages" data-toggle="tab">Messages</a></li>
+											<li class="divider"></li>
+											<li><a href="#myMedia" id="ancMediaBook" data-toggle="tab">Audio Book</a></li>
+										</ul>
+									</li>
+
+									<li class="divider"></li>
+
+									<li class="dropdown-submenu">
+										<a href="#" tabindex="-1">Digital Publishing</a>
+										<ul class="dropdown-menu">
+											<li><a href="#myMedia" tabindex="-1" id="ancMediaGraphics" data-toggle="tab">Graphics</a></li>	
+											<li class="divider"></li>
+											<li><a href="#myMedia" id="ancMediaPublication" data-toggle="tab">Publications</a></li>
+										</ul>
+									</li>
+									<li class="divider"></li>
+									<li><a href="#" id="ancMediaBlog">Blog</a></li>
+								</ul>
+							</li> <!-- Media -->
+
+							<!-- Software -->
+                            <li class="dropdown">
+								<a href="#" role="button" data-toggle="dropdown" id="mnuMedia">Software<span class="caret"></span></a>
+								<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+									<li><a href="#mySoftware" id="ancSoftwareConsult" data-toggle="tab">Consultation</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-submenu">
+										<a href="#" tabindex="-1">Technology</a>
+										<ul class="dropdown-menu">
+											<li><a href="#mySoftware" tabindex="-1" id="ancSoftwareDB" data-toggle="tab">Databases</a></li>	
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareMedia" data-toggle="tab">Media</a></li>
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareWeb" data-toggle="tab">Web</a></li>
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareDbAdmin" data-toggle="tab">Database Administration</a></li>
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareSecurity" data-toggle="tab">Web Security</a></li>
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareAI" data-toggle="tab">Artificial Intelligence</a></li>
+										</ul>
+									</li>
+
+									<li class="divider"></li>
+
+									<li class="dropdown-submenu">
+										<a href="#" tabindex="-1">Engineering</a>
+										<ul class="dropdown-menu">
+											<li><a href="#mySoftware" tabindex="-1" id="ancSoftwareNetwork" data-toggle="tab">Networking</a></li>	
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareSecurity" data-toggle="tab">System Security</a></li>
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareComp" data-toggle="tab">Computer Systems</a></li>
+										</ul>
+									</li>
+
+									<li class="divider"></li>
+
+									<li class="dropdown-submenu">
+										<a href="#" tabindex="-1">Mobile</a>
+										<ul class="dropdown-menu">
+											<li><a href="#mySoftware" tabindex="-1" id="ancSoftwareAndroid" data-toggle="tab">Android</a></li>	
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareIOS" data-toggle="tab">iOS</a></li>
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareBB" data-toggle="tab">Blackberry</a></li>
+										</ul>
+									</li>
+
+									<li class="divider"></li>
+
+									<li class="dropdown-submenu">
+										<a href="#" tabindex="-1">Systems Design</a>
+										<ul class="dropdown-menu">
+											<li><a href="#mySoftware" tabindex="-1" id="ancSoftwareJava" data-toggle="tab">Java</a></li>	
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareC" data-toggle="tab">C</a></li>
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareCpp" data-toggle="tab">C++</a></li>
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareCsp" data-toggle="tab">C#</a></li>
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwareVB" data-toggle="tab">Visual Basic</a></li>
+											<li class="divider"></li>
+											<li><a href="#mySoftware" id="ancSoftwarePython" data-toggle="tab">Python</a></li>
+										</ul>
+									</li>
+									<li class="divider"></li>
+									<li><a href="#" id="ancSoftwaresBlog">Blog</a></li>
+								</ul>
+							</li> <!--Software -->
+
+							<li><a href="#myContactUs" data-toggle="tab" id="mnuContactUsA">Contact Us</a></li>
+						</ul>
+
+                        <!--
+						<form class="navbar-form navbar-right" role="search">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Search for What?">
+							</div>
+							<button type="submit" class="btn btn-default">Submit</button>
+						</form> -->
+					</div>
+				</div>
+			</nav> <!-- End of Navbar -->
+
+			<h1 id="myOrg">TEBS GROUP</h1>
+			<h2 id="myTitle">STUDIOS, MEDIA AND SOFTWARE</h2>
+			<h3><span id="spnMenuItem"></span></h3>
+
+            <div class="tab-content" id="tabDepot">
+                <div  id="myHome" class="tab-pane fade in active">
+                    <!--<h1>Welcome to my School! Hallelujah!</h1> -->
+                    <div class="row">
+						<div id="dvPhoto" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<img alt="Tebs Group Logo" width="100%" height="100%" src="images/tebs.jpg">
+						</div>
+
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<h2>TEBS GROUP</h2>
+							<div>
+								<p>TEBS GROUP provides high quality studio services, multi-media services and software engineering services.</p>
+								<p>Try us today!</p>
+							</div>
+						</div>
+						
+					</div> <!-- end of row-->
+                </div> <!--end of home tab-->
+
+                <div id="myStudios" class="tab-pane fade">
+                    <div class="row">
+						<div id="dvPhoto" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<img id="imgStudios" alt="Tebs Group Logo" width="100%" height="100%" src="images/tebs-studios.jpg">
+						</div>
+
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<h2>TEBS STUDIOS</h2>
+							<div id="studioDepot">
+								<p>Inspired gospel music, video and movies.</p>
+							</div>
+						</div>
+						
+					</div> <!-- end of row-->
+
+                </div>
+
+                <div id="myMedia" class="tab-pane fade">
+					<div class="row">
+						<div id="dvPhoto" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<img id="imgMedia" alt="Tebs Group Logo" width="100%" height="100%" src="images/tebs-media.jpg">
+						</div>
+					
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+							<h2>TEBS MEDIA</h2>
+							<div id="mediaDepot">
+								<p>Inspired gospel music, video and movies.</p>
+							</div>
+							
+						</div>
+					
+					</div>
+					<!-- end of row-->
+
+                </div>
+				
+				<div id="mySoftware" class="tab-pane fade">
+					<div class="row">
+						<div id="dvPhoto" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<img id="imgSoftware" alt="Tebs Group Logo" width="100%" height="100%" src="images/tebs-software.jpg">
+						</div>
+					
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+							<h2>TEBS SOFTWARE</h2>
+							<div id="softwareDepot">
+								<p>Software, empowering your business!</p>
+							</div>
+						</div>
+					</div>
+					<!-- end of row-->
+				</div>
+
+				<div id="myContactUs" class="tab-pane fade">
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+							<div class="form-group">
+								<input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Your Name" required/>
+							</div>
+							<div class="form-group">
+								<input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Your Email" required/>
+							</div>
+							<div class="form-group">
+								<input type="text" id="contact_subject" name="contact_subject" class="form-control" placeholder="Your Subject" required/>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+							<div class="form-group">
+								<textarea id="contact_message" name="contact_message" class="form-control" rows="6" placeholder="Your Message" required></textarea>
+							</div>
+						
+							<button type="submit" id="btnSubmit" class="btn submit-btn">Send It Now</button>
+						</div>
+
+					</div>
+				
+				</div>
+            </div> <!-- theDepot -->
+			
+			<!--Hello World! Date:<input type="text" id="txtDate" size="15"> -->
+			<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> <!-- multiplication symbol -->
+							<h4 class="modal-title">Authenticate</h4>
+						</div>
+						
+						<div class="modal-body">
+							<!-- form will go here -->
+							<form id="modalForm">
+								<div class="input-group">
+									<span class="input-group-addon">Authorize</span><input type="password" id="txtAuth" class="form-control" placeholder="Authorize">
+								</div>
+							</form>
+						</div>
+						
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-primary" id="btnDoneModal">Done</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		<footer class="row tm-footer">
+                    
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<h4>Copyright &copy; 2018 Benibo Walson,<a href="tel:+2348068781029">+2348068781029</a>, <a href="mailto:benibowalson@live.com">benibowalson@live.com</a></h4>				
+			</div>
+			
+		</footer>     
+        <!--<script src="jquery-2.1.1.min.js"></script> -->
+        <script src="scripts/js/libraries/bootstrap/bootstrap.min.js"></script>
+    </body>
+</html>
